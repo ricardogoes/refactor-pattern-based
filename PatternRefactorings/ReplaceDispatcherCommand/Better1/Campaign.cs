@@ -1,0 +1,108 @@
+﻿using System;
+using System.Linq;
+
+namespace PatternRefactorings.ReplaceDispatcherCommand.Better1
+{
+    public class Campaign
+    {
+        public string Name { get; set; }
+        public string Status { get; private set; }
+        public string Advertiser { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string LastUpdatedBy { get; private set; }
+
+        public Campaign()
+        {
+            Status = "pending";
+        }
+
+        // Extract Method on each leg of the switch
+        public void UpdateStatus(string newStatus, string userName)
+        {
+            switch (newStatus)
+            {
+                case "cancelled":
+                    CancelCampaign(userName, newStatus);
+                    break;
+                case "pending":
+                    MarkPending(userName, newStatus);
+                    break;
+                case "approved":
+                    ApproveCampaign(userName, newStatus);
+                    break;
+                case "active":
+                    ActivateCampaign(userName, newStatus);
+                    break;
+                case "completed":
+                    MarkComplete(userName, newStatus);
+                    break;
+                default:
+                    break;
+            }
+        }
+  
+        private void CancelCampaign(string userName, string newStatus)
+        {
+            if (this.Status == "cancelled")
+            {
+                throw new InvalidOperationException("Can't cancel a campaign that is already cancelled.");
+            }
+            if (this.Status == "completed")
+            {
+                throw new InvalidOperationException("Can't cancel a campaign once it has completed.");
+            }
+            string message = String.Format("{0} cancelled {1} campaign {2}", userName, this.Status, this.Name);
+            AdvertiserNotificationService.NotifyAdvertiser(this.Advertiser, message);
+            this.Status = newStatus;
+            this.LastUpdatedBy = userName;
+        }
+
+        private void MarkPending(string userName, string newStatus)
+        {
+            throw new InvalidOperationException("Campaigns are only pending when first created; their status cannot be reset to pending.");
+        }
+
+
+        private void ApproveCampaign(string userName, string newStatus)
+        {
+            if (this.Status == "approved")
+            {
+                throw new InvalidOperationException("Can't approve a campaign once it has already been approved.");
+            }
+            if (this.Status == "completed")
+            {
+                throw new InvalidOperationException("Can't approve a campaign once it has completed.");
+            }
+            if (this.Status == "active")
+            {
+                throw new InvalidOperationException("Can't approve a campaign once it is active.");
+            }
+            string message = String.Format("{0} approved {1} campaign {2}", userName, this.Status, this.Name);
+            AdvertiserNotificationService.NotifyAdvertiser(this.Advertiser, message);
+            this.Status = newStatus;
+            this.LastUpdatedBy = userName;
+        }
+
+        private void ActivateCampaign(string userName, string newStatus)
+        {
+            // TODO: Implement this method
+            throw new NotImplementedException();
+        }
+
+        private void MarkComplete(string userName, string newStatus)
+        {
+            // TODO: Implement this method
+            throw new NotImplementedException();
+        }
+
+
+    }
+    public class AdvertiserNotificationService
+    {
+        public static void NotifyAdvertiser(string advertiser, string message)
+        {
+
+        }
+    }
+}

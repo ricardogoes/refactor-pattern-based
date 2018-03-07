@@ -1,0 +1,5 @@
+C:\Dev\bitbucket.org\PluralsightCourses\021 - Refactoring Fundamentals\PatternRefactorings\PatternRefactorings\bin\Debug\PatternRefactorings.dll
+C:\Dev\bitbucket.org\PluralsightCourses\021 - Refactoring Fundamentals\PatternRefactorings\PatternRefactorings\bin\Debug\PatternRefactorings.pdb
+C:\Dev\bitbucket.org\PluralsightCourses\021 - Refactoring Fundamentals\PatternRefactorings\PatternRefactorings\obj\Debug\PatternRefactorings.csprojResolveAssemblyReference.cache
+C:\Dev\bitbucket.org\PluralsightCourses\021 - Refactoring Fundamentals\PatternRefactorings\PatternRefactorings\obj\Debug\PatternRefactorings.dll
+C:\Dev\bitbucket.org\PluralsightCourses\021 - Refactoring Fundamentals\PatternRefactorings\PatternRefactorings\obj\Debug\PatternRefactorings.pdb

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A912BFF9-381F-438C-9B30-A60F1F53C75B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PatternRefactorings</RootNamespace>
+    <AssemblyName>PatternRefactorings</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EncapsulateClassesFactory\Bad\Advertisement.cs" />
+    <Compile Include="EncapsulateClassesFactory\Good\Advertisement.cs" />
+    <Compile Include="FormTemplateMethod\Bad\OrderShipment.cs" />
+    <Compile Include="FormTemplateMethod\Better\OrderShipment.cs" />
+    <Compile Include="FormTemplateMethod\FedExService.cs" />
+    <Compile Include="FormTemplateMethod\Good\OrderShipment.cs" />
+    <Compile Include="FormTemplateMethod\PrinterService.cs" />
+    <Compile Include="FormTemplateMethod\UpsService.cs" />
+    <Compile Include="IntroduceNullObject\Bad\Book.cs" />
+    <Compile Include="IntroduceNullObject\Good\Book.cs" />
+    <Compile Include="IntroduceNullObject\StockingPlan.cs" />
+    <Compile Include="MoveAccumulationVisitor\Bad\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Better1\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Better2\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Better3\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Better4\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Better5\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Better6\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Better7\TextExtractor.cs" />
+    <Compile Include="MoveAccumulationVisitor\Good\TextExtractor.cs" />
+    <Compile Include="MoveEmbellishDecorator\Bad\TabletStore.cs" />
+    <Compile Include="MoveEmbellishDecorator\Better1\TabletStore.cs" />
+    <Compile Include="MoveEmbellishDecorator\Better2\TabletStore.cs" />
+    <Compile Include="MoveEmbellishDecorator\Better3\TabletStore.cs" />
+    <Compile Include="MoveEmbellishDecorator\Good\TabletStore.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplaceConditionalStrategy\Bad\Loan.cs" />
+    <Compile Include="ReplaceConditionalStrategy\Better1\Loan.cs" />
+    <Compile Include="ReplaceConditionalStrategy\Better2\Loan.cs" />
+    <Compile Include="ReplaceConditionalStrategy\Better3\Loan.cs" />
+    <Compile Include="ReplaceConditionalStrategy\Good\Loan.cs" />
+    <Compile Include="ReplaceDispatcherCommand\Bad\Campaign.cs" />
+    <Compile Include="ReplaceDispatcherCommand\Better1\Campaign.cs" />
+    <Compile Include="ReplaceDispatcherCommand\Better2\Campaign.cs" />
+    <Compile Include="ReplaceDispatcherCommand\Better3\Campaign.cs" />
+    <Compile Include="ReplaceDispatcherCommand\Good\Campaign.cs" />
+    <Compile Include="ReplaceStateConditionalWithState\Bad\Campaign.cs" />
+    <Compile Include="ReplaceStateConditionalWithState\Better1\Campaign.cs" />
+    <Compile Include="ReplaceStateConditionalWithState\Better2\Campaign.cs" />
+    <Compile Include="ReplaceStateConditionalWithState\Better3\Campaign.cs" />
+    <Compile Include="ReplaceStateConditionalWithState\Better4\Campaign.cs" />
+    <Compile Include="ReplaceStateConditionalWithState\Better5\Campaign.cs" />
+    <Compile Include="ReplaceStateConditionalWithState\Good\Campaign.cs" />
+    <Compile Include="ReplaceTypeCodeWithState\Bad\LightSwitch.cs" />
+    <Compile Include="ReplaceTypeCodeWithState\Good\LightSwitch.cs" />
+    <Compile Include="UnifyInterfacesWithAdapter\Bad\Client.cs" />
+    <Compile Include="UnifyInterfacesWithAdapter\Better1\Client.cs" />
+    <Compile Include="UnifyInterfacesWithAdapter\Better2\Client.cs" />
+    <Compile Include="UnifyInterfacesWithAdapter\Better3\Client.cs" />
+    <Compile Include="UnifyInterfacesWithAdapter\Better4\Client.cs" />
+    <Compile Include="UnifyInterfacesWithAdapter\Good\Client.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
